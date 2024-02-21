@@ -188,7 +188,7 @@ app = Client('Slam', api_id=int(TELEGRAM_API), api_hash=TELEGRAM_HASH, bot_token
 # Generate Telegraph Token
 sname = ''.join(random.SystemRandom().choices(string.ascii_letters, k=8))
 LOGGER.info("Generating TELEGRAPH_TOKEN using '" + sname + "' name")
-telegraph = Telegraph()
+telegraph = Telegraph(domain='graph.org')
 telegraph.create_account(short_name=sname)
 telegraph_token = telegraph.get_access_token()
 
